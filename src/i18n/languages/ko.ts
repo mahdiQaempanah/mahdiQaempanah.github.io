@@ -35,4 +35,13 @@ export const ko: Translation = {
 	[Key.author]: "저자",
 	[Key.publishedAt]: "게시일",
 	[Key.license]: "라이선스",
+
+	[Key.publications]: "논문",
+	[Key.experience]: "경력",
+	[Key.projects]: "프로젝트",
+	[Key.education]: "교육",
+	[Key.honors]: "수상",
+	[Key.teaching]: "강의",
+	[Key.skills]: "기술",
+	[Key.posts]: "게시물",
 };

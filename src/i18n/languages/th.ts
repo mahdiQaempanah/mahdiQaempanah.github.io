@@ -35,4 +35,13 @@ export const th: Translation = {
 	[Key.author]: "ผู้เขียน",
 	[Key.publishedAt]: "เผยแพร่เมื่อ",
 	[Key.license]: "สัญญาอนุญาต",
+
+	[Key.publications]: "ผลงานตีพิมพ์",
+	[Key.experience]: "ประสบการณ์",
+	[Key.projects]: "โครงการ",
+	[Key.education]: "การศึกษา",
+	[Key.honors]: "เกียรติประวัติ",
+	[Key.teaching]: "การสอน",
+	[Key.skills]: "ทักษะ",
+	[Key.posts]: "โพสต์",
 };
