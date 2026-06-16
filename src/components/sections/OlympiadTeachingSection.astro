@@ -1,5 +1,6 @@
 ---
 import { experience } from "../../data/experience";
+import OlympiadSection from "./OlympiadSection.svelte";
 import ScrollReveal from "./ScrollReveal.svelte";
 ---
 
@@ -8,16 +9,7 @@ import ScrollReveal from "./ScrollReveal.svelte";
     <h2 class="text-3xl font-bold mb-8 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-700 pb-2">Olympiad Teaching</h2>
   </ScrollReveal>
 
-  {experience.olympiadTeaching.map((teaching, index) => (
-    <ScrollReveal client:load delay={100 + index * 100}>
-      <div class="mb-4 p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800/30 border border-neutral-200 dark:border-neutral-700">
-        <p class="font-medium dark:text-neutral-100">
-          {teaching.role} ({teaching.years})
-        </p>
-        <p class="text-neutral-600 dark:text-neutral-300 text-sm mt-1">
-          {teaching.description}
-        </p>
-      </div>
-    </ScrollReveal>
-  ))}
+  <ScrollReveal client:load delay={100}>
+    <OlympiadSection client:load items={experience.olympiadTeaching} initialCount={3} />
+  </ScrollReveal>
 </section>

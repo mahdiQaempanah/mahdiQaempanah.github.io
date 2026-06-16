@@ -11,22 +11,44 @@ import ScrollReveal from "./ScrollReveal.svelte";
   {experience.work.map((work, index) => (
     <ScrollReveal client:load delay={100 + index * 100}>
       <div class="group mb-6 relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-sm hover:shadow-md transition-all duration-300 p-6">
-        <div class="flex flex-wrap justify-between items-start mb-2">
-          <h4 class="text-lg font-semibold dark:text-neutral-100">{work.role}</h4>
-          <span class="text-sm text-neutral-400">
-            {work.startDate} — {work.endDate}
-          </span>
+        <div class="flex gap-4">
+          {work.logo && (
+            <div class="shrink-0">
+              <img src={work.logo} alt={`${work.company} logo`} class="w-14 h-14 rounded-lg object-cover border border-neutral-200 dark:border-neutral-700" loading="lazy" />
+            </div>
+          )}
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap justify-between items-start mb-1.5">
+              <h4 class="text-lg font-semibold dark:text-neutral-100 leading-tight">{work.role}</h4>
+              <span class="text-sm text-neutral-400 shrink-0 ml-2">
+                {work.startDate} — {work.endDate}
+              </span>
+            </div>
+            <p class="text-[var(--primary)] font-medium text-sm mb-3">{work.company}, {work.location}</p>
+          </div>
         </div>
-        <p class="text-[var(--primary)] font-medium mb-3">{work.company}, {work.location}</p>
-        <p class="text-neutral-600 dark:text-neutral-300 mb-3 leading-relaxed">{work.description}</p>
-        <ul class="space-y-1.5">
-          {work.highlights.map((highlight) => (
-            <li class="flex items-start gap-2 text-sm text-neutral-600 dark:text-neutral-300">
-              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-[var(--primary)] shrink-0"></span>
-              {highlight}
-            </li>
-          ))}
-        </ul>
+
+        <!-- Arrowhead toggle -->
+        <details class="group/details mt-2 transition-all duration-300">
+          <summary class="text-sm font-medium text-[var(--primary)] hover:underline cursor-pointer list-none flex items-center gap-2 select-none">
+            <span class="w-6 h-6 rounded-full border border-neutral-300 dark:border-neutral-600 flex items-center justify-center group-hover/details:border-[var(--primary)] group-hover/details:bg-[var(--primary)]/10 transition-all duration-200" title="Toggle details">
+              <svg class="w-3.5 h-3.5 transition-transform group-open/details:rotate-90 text-neutral-500 dark:text-neutral-400 group-hover/details:text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="details-content mt-3 space-y-3">
+            <p class="text-neutral-600 dark:text-neutral-300 leading-relaxed">{work.description}</p>
+            <ul class="space-y-1.5">
+              {work.highlights.map((highlight) => (
+                <li class="flex items-start gap-2 text-sm text-neutral-600 dark:text-neutral-300">
+                  <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-[var(--primary)] shrink-0"></span>
+                  {highlight}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </details>
       </div>
     </ScrollReveal>
   ))}

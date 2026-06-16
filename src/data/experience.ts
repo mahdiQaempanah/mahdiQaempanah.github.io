@@ -6,6 +6,7 @@ export interface WorkExperience {
 	endDate: string;
 	description: string;
 	highlights: string[];
+	logo?: string;
 }
 
 export interface TAExperience {
@@ -23,8 +24,13 @@ export interface Honor {
 
 export interface OlympiadTeaching {
 	role: string;
-	years: string;
+	company: string;
+	location: string;
+	startDate: string;
+	endDate: string;
 	description: string;
+	highlights: string[];
+	logo?: string;
 }
 
 export interface ExperienceData {
@@ -51,32 +57,35 @@ export const experience: ExperienceData = {
 				"Implemented monitoring and observability using Kibana and Grafana",
 				"Collaborated with cross-functional teams to improve system reliability and operational efficiency",
 			],
+			logo: "/assets/images/tabdeal.png",
 		},
 		{
 			role: "Software Engineer Intern",
 			company: "Divar",
 			location: "Tehran, Iran",
-			startDate: "Summer 2021",
-			endDate: "Summer 2021",
+			startDate: "June 2021",
+			endDate: "August 2021",
 			description:
 				"Learned various technologies including Django/Python, Docker, and Kubernetes. Designed a simple website to benefit from payment services.",
 			highlights: [
 				"Learned Django/Python, Docker, and Kubernetes",
 				"Designed a website with payment services (balance increase, transfer, SIM card recharge)",
 			],
+			logo: "/assets/images/divar.jpeg",
 		},
 		{
 			role: "Software Engineer Intern",
 			company: "Asa co",
 			location: "Tehran, Iran",
-			startDate: "Winter 2021",
-			endDate: "Winter 2021",
+			startDate: "December 2021",
+			endDate: "February 2022",
 			description:
 				"Learned C#, React/JavaScript, and SQL. Designed a simple website for building management.",
 			highlights: [
 				"Learned C#, React/JavaScript, and SQL",
 				"Designed a building management website",
 			],
+			logo: "/assets/images/asa.jpeg",
 		},
 	],
 	ta: [
@@ -163,16 +172,70 @@ export const experience: ExperienceData = {
 	],
 	olympiadTeaching: [
 		{
-			role: "Olympiad in Artificial Intelligence Teacher at Allameh Helli 10 High School",
-			years: "2025–Present",
+			role: "Olympiad in Artificial Intelligence Teacher",
+			company: "Allameh Helli 10 High School",
+			location: "Tehran, Iran",
+			startDate: "2025",
+			endDate: "Present",
 			description:
 				"Teaching Artificial Intelligence Olympiad topics to high school students and mentoring them in machine learning, mathematics, algorithms, and competition-oriented problem solving.",
+			highlights: [
+				"Teaching AI Olympiad topics to high school students",
+				"Mentoring students in machine learning and algorithms",
+				"Competition-oriented problem solving training",
+			],
 		},
 		{
 			role: "Olympiad in Informatics Teacher",
-			years: "2020–2024",
+			company: "Farzanegan 2 High School",
+			location: "Tehran, Iran",
+			startDate: "September 2023",
+			endDate: "July 2024",
 			description:
-				"Teaching excellent high school students to participate in International Olympiad in Informatics at Farzanegan 2 High School, Dastgheib High School, Farzanegan Olympiad Club, and Allameh Helli 10 High School.",
+				"Teaching excellent high school students to participate in International Olympiad in Informatics.",
+			highlights: [
+				"Prepared students for the International Olympiad in Informatics",
+				"Taught advanced algorithms and data structures",
+			],
+		},
+		{
+			role: "Olympiad in Informatics Teacher",
+			company: "Dastgheib High School",
+			location: "Shiraz, Iran (remote)",
+			startDate: "September 2021",
+			endDate: "July 2022",
+			description:
+				"Teaching excellent high school students to participate in International Olympiad in Informatics.",
+			highlights: [
+				"Prepared students for the International Olympiad in Informatics",
+				"Taught advanced algorithms and data structures",
+			],
+		},
+		{
+			role: "Olympiad in Informatics Teacher",
+			company: "Farzanegan Olympiad Club",
+			location: "Mashhad, Iran (remote)",
+			startDate: "September 2020",
+			endDate: "July 2021",
+			description:
+				"Teaching excellent high school students to participate in International Olympiad in Informatics.",
+			highlights: [
+				"Prepared students for the International Olympiad in Informatics",
+				"Taught advanced algorithms and data structures",
+			],
+		},
+		{
+			role: "Olympiad in Informatics Teacher",
+			company: "Allameh Helli 10 High School",
+			location: "Tehran, Iran",
+			startDate: "September 2020",
+			endDate: "July 2021",
+			description:
+				"Teaching excellent high school students to participate in International Olympiad in Informatics.",
+			highlights: [
+				"Prepared students for the International Olympiad in Informatics",
+				"Taught advanced algorithms and data structures",
+			],
 		},
 	],
 };

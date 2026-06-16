@@ -12,40 +12,57 @@ import ScrollReveal from "./ScrollReveal.svelte";
     <ScrollReveal client:load delay={index * 100 + 50}>
       <div class="group mb-8 relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-sm hover:shadow-md transition-all duration-300">
         {pub.image && (
-          <div class="relative h-48 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-            <img src={pub.image} alt={pub.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          <div class="relative h-48 overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+            <img src={pub.image} alt="" class="absolute inset-0 w-full h-full object-cover blur-xl opacity-60 scale-110" aria-hidden="true" loading="lazy" />
+            <img src={pub.image} alt={pub.title} class="relative w-full h-full object-contain p-3 z-10 group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
         )}
         <div class="p-6">
-          <h3 class="text-xl font-semibold mb-3 dark:text-neutral-100 leading-snug">{pub.title}</h3>
+          <h3 class="text-xl font-semibold mb-2 dark:text-neutral-100 leading-snug">{pub.title}</h3>
+
+          <!-- Collaborators right after title -->
+          <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-3 not-italic">
+            {pub.collaborators.join(" · ")}
+          </p>
+
+          <!-- Venue on left, Year on right -->
           <div class="flex flex-wrap items-center gap-2 mb-3">
             <span class="px-3 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded-full text-xs font-semibold tracking-wide">
               {pub.venue}
             </span>
-            <span class="text-neutral-400 text-sm">{pub.year}</span>
+            <span class="text-sm text-neutral-400 ml-auto">{pub.year}</span>
           </div>
-          <p class="text-neutral-600 dark:text-neutral-300 mb-3 leading-relaxed">{pub.description}</p>
-          <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-4 italic">
-            {pub.collaborators.join(" · ")}
-          </p>
-          <div class="flex flex-wrap gap-2">
+          <!-- Abstract expand alongside buttons -->
+          <div class="flex flex-wrap items-center gap-2">
+            <details class="group/details transition-all duration-300">
+              <summary class="text-sm font-medium text-[var(--primary)] hover:underline cursor-pointer list-none flex items-center gap-2 select-none">
+                <span class="w-6 h-6 rounded-full border border-neutral-300 dark:border-neutral-600 flex items-center justify-center group-hover/details:border-[var(--primary)] group-hover/details:bg-[var(--primary)]/10 transition-all duration-200" title="Toggle abstract">
+                  <svg class="w-3.5 h-3.5 transition-transform group-open/details:rotate-90 text-neutral-500 dark:text-neutral-400 group-hover/details:text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </summary>
+              <div class="details-content mt-2">
+                <p class="text-neutral-600 dark:text-neutral-300 leading-relaxed">{pub.description}</p>
+              </div>
+            </details>
             {pub.links.googleScholar && (
-              <a href={pub.links.googleScholar} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors">
+              <a href={pub.links.googleScholar} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md border border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-200">
                 Google Scholar
               </a>
             )}
             {pub.links.arxiv && (
-              <a href={pub.links.arxiv} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors">
+              <a href={pub.links.arxiv} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md border border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-200">
                 arXiv
               </a>
             )}
             {pub.links.doi && (
-              <a href={pub.links.doi} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors">
+              <a href={pub.links.doi} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md border border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-200">
                 DOI
               </a>
             )}
             {pub.links.projectPage && (
-              <a href={pub.links.projectPage} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors">
+              <a href={pub.links.projectPage} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-md border border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)] hover:text-white hover:border-[var(--primary)] transition-all duration-200">
                 Project Page
               </a>
             )}

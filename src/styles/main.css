@@ -140,6 +140,21 @@
     height: var(--collapsedHeight);
 }
 
+/* Smooth details expand/collapse animation */
+details {
+  overflow: hidden;
+}
+details .details-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out;
+}
+details[open] .details-content {
+  max-height: 500px;
+  opacity: 1;
+}
+
 .custom-md spoiler {
   @apply bg-[var(--codeblock-bg)] hover:bg-transparent px-1 py-0.5 overflow-hidden rounded-md transition-all duration-150;
 

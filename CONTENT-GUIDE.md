@@ -292,7 +292,7 @@ projects: [
   {
     title: "Olympiad Graph Theory Book",
     description: "Co-authored a 200-page online book...",
-    tech: ["LaTeX", "Writing", "Graph Theory"],
+    tech: ["LaTeX", "Graph Theory"],
     links: {
       live: "https://gtoi.shaazzz.ir/",
     },
