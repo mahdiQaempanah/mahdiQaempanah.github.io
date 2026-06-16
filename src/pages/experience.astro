@@ -1,37 +1,19 @@
 ---
-
-import { getEntry, render } from "astro:content";
-import Markdown from "@components/misc/Markdown.astro";
 import HonorsSection from "../components/sections/HonorsSection.astro";
 import OlympiadTeachingSection from "../components/sections/OlympiadTeachingSection.astro";
-import ProjectsSection from "../components/sections/ProjectsSection.astro";
-import PublicationsSection from "../components/sections/PublicationsSection.astro";
 import TASection from "../components/sections/TASection.astro";
 import WorkSection from "../components/sections/WorkSection.astro";
 import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
-
-const aboutPost = await getEntry("spec", "about");
-
-if (!aboutPost) {
-	throw new Error("About page content not found");
-}
-
-const { Content } = await render(aboutPost);
 ---
-<MainGridLayout title={i18n(I18nKey.about)} description={i18n(I18nKey.about)}>
+<MainGridLayout title={i18n(I18nKey.experience)} description={i18n(I18nKey.experience)}>
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
         <div class="card-base z-10 px-9 py-6 relative w-full ">
-            <Markdown class="mt-2">
-                <Content />
-            </Markdown>
             <HonorsSection />
             <WorkSection />
             <OlympiadTeachingSection />
             <TASection />
-            <PublicationsSection />
-            <ProjectsSection />
         </div>
     </div>
 </MainGridLayout>

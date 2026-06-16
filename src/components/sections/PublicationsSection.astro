@@ -1,0 +1,57 @@
+---
+import { publications } from "../../data/publications";
+import ScrollReveal from "./ScrollReveal.svelte";
+---
+
+<section class="mb-12">
+  <ScrollReveal client:load delay={0}>
+    <h2 class="text-3xl font-bold mb-8 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-700 pb-2">Publications</h2>
+  </ScrollReveal>
+
+  {publications.map((pub, index) => (
+    <ScrollReveal client:load delay={index * 100 + 50}>
+      <div class="group mb-8 relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-sm hover:shadow-md transition-all duration-300">
+        {pub.image && (
+          <div class="relative h-48 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+            <img src={pub.image} alt={pub.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+        )}
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-3 dark:text-neutral-100 leading-snug">{pub.title}</h3>
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="px-3 py-1 bg-[var(--primary)]/10 text-[var(--primary)] rounded-full text-xs font-semibold tracking-wide">
+              {pub.venue}
+            </span>
+            <span class="text-neutral-400 text-sm">{pub.year}</span>
+          </div>
+          <p class="text-neutral-600 dark:text-neutral-300 mb-3 leading-relaxed">{pub.description}</p>
+          <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-4 italic">
+            {pub.collaborators.join(" · ")}
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {pub.links.googleScholar && (
+              <a href={pub.links.googleScholar} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors">
+                Google Scholar
+              </a>
+            )}
+            {pub.links.arxiv && (
+              <a href={pub.links.arxiv} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors">
+                arXiv
+              </a>
+            )}
+            {pub.links.doi && (
+              <a href={pub.links.doi} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors">
+                DOI
+              </a>
+            )}
+            {pub.links.projectPage && (
+              <a href={pub.links.projectPage} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors">
+                Project Page
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </ScrollReveal>
+  ))}
+</section>

@@ -1,0 +1,33 @@
+---
+import { experience } from "../../data/experience";
+import ScrollReveal from "./ScrollReveal.svelte";
+---
+
+<section class="mb-12">
+  <ScrollReveal client:load delay={0}>
+    <h2 class="text-3xl font-bold mb-8 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-700 pb-2">Work Experience</h2>
+  </ScrollReveal>
+
+  {experience.work.map((work, index) => (
+    <ScrollReveal client:load delay={100 + index * 100}>
+      <div class="group mb-6 relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-sm hover:shadow-md transition-all duration-300 p-6">
+        <div class="flex flex-wrap justify-between items-start mb-2">
+          <h4 class="text-lg font-semibold dark:text-neutral-100">{work.role}</h4>
+          <span class="text-sm text-neutral-400">
+            {work.startDate} — {work.endDate}
+          </span>
+        </div>
+        <p class="text-[var(--primary)] font-medium mb-3">{work.company}, {work.location}</p>
+        <p class="text-neutral-600 dark:text-neutral-300 mb-3 leading-relaxed">{work.description}</p>
+        <ul class="space-y-1.5">
+          {work.highlights.map((highlight) => (
+            <li class="flex items-start gap-2 text-sm text-neutral-600 dark:text-neutral-300">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-[var(--primary)] shrink-0"></span>
+              {highlight}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </ScrollReveal>
+  ))}
+</section>

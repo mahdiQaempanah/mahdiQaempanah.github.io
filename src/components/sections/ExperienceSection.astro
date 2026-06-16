@@ -1,0 +1,91 @@
+---
+import { experience } from "../../data/experience";
+import ScrollReveal from "./ScrollReveal.svelte";
+---
+
+<section class="mb-12">
+  <ScrollReveal client:load delay={0}>
+    <h2 class="text-3xl font-bold mb-8 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-700 pb-2">Experience</h2>
+  </ScrollReveal>
+
+  <!-- Work Experience -->
+  <ScrollReveal client:load delay={50}>
+    <h3 class="text-xl font-semibold mb-4 dark:text-neutral-200">Work Experience</h3>
+  </ScrollReveal>
+
+  {experience.work.map((work, index) => (
+    <ScrollReveal client:load delay={100 + index * 100}>
+      <div class="group mb-6 relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-sm hover:shadow-md transition-all duration-300 p-6">
+        <div class="flex flex-wrap justify-between items-start mb-2">
+          <h4 class="text-lg font-semibold dark:text-neutral-100">{work.role}</h4>
+          <span class="text-sm text-neutral-400">
+            {work.startDate} — {work.endDate}
+          </span>
+        </div>
+        <p class="text-[var(--primary)] font-medium mb-3">{work.company}, {work.location}</p>
+        <p class="text-neutral-600 dark:text-neutral-300 mb-3 leading-relaxed">{work.description}</p>
+        <ul class="space-y-1.5">
+          {work.highlights.map((highlight) => (
+            <li class="flex items-start gap-2 text-sm text-neutral-600 dark:text-neutral-300">
+              <span class="mt-1.5 h-1.5 w-1.5 rounded-full bg-[var(--primary)] shrink-0"></span>
+              {highlight}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </ScrollReveal>
+  ))}
+
+  <!-- Teaching Assistant -->
+  <ScrollReveal client:load delay={150}>
+    <h3 class="text-xl font-semibold mb-4 mt-8 dark:text-neutral-200">Teaching Assistant</h3>
+  </ScrollReveal>
+
+  <ScrollReveal client:load delay={200}>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      {experience.ta.map((ta) => (
+        <div class="p-4 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md transition-all duration-300">
+          <p class="font-semibold dark:text-neutral-100">{ta.course}</p>
+          <p class="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
+            {ta.instructor} — {ta.term}
+          </p>
+        </div>
+      ))}
+    </div>
+  </ScrollReveal>
+
+  <!-- Honors -->
+  <ScrollReveal client:load delay={250}>
+    <h3 class="text-xl font-semibold mb-4 mt-8 dark:text-neutral-200">Honors & Awards</h3>
+  </ScrollReveal>
+
+  {experience.honors.map((honor, index) => (
+    <ScrollReveal client:load delay={300 + index * 100}>
+      <div class="mb-4 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/40 border border-neutral-200 dark:border-neutral-700 shadow-sm flex items-center gap-3">
+        <span class="text-2xl">{honor.emoji}</span>
+        <div>
+          <p class="font-semibold dark:text-neutral-100">{honor.title}</p>
+          <p class="text-sm text-neutral-500 dark:text-neutral-400">{honor.description} ({honor.year})</p>
+        </div>
+      </div>
+    </ScrollReveal>
+  ))}
+
+  <!-- Olympiad Teaching -->
+  <ScrollReveal client:load delay={350}>
+    <h3 class="text-xl font-semibold mb-4 mt-8 dark:text-neutral-200">Olympiad Teaching</h3>
+  </ScrollReveal>
+
+  {experience.olympiadTeaching.map((teaching, index) => (
+    <ScrollReveal client:load delay={400 + index * 100}>
+      <div class="mb-4 p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800/30 border border-neutral-200 dark:border-neutral-700">
+        <p class="font-medium dark:text-neutral-100">
+          {teaching.role} ({teaching.years})
+        </p>
+        <p class="text-neutral-600 dark:text-neutral-300 text-sm mt-1">
+          {teaching.description}
+        </p>
+      </div>
+    </ScrollReveal>
+  ))}
+</section>

@@ -1,0 +1,50 @@
+---
+import { projects } from "../../data/projects";
+import ScrollReveal from "./ScrollReveal.svelte";
+---
+
+<section class="mb-12">
+  <ScrollReveal client:load delay={0}>
+    <h2 class="text-3xl font-bold mb-8 dark:text-neutral-100 border-b border-neutral-200 dark:border-neutral-700 pb-2">Projects</h2>
+  </ScrollReveal>
+
+  {projects.map((project, index) => (
+    <ScrollReveal client:load delay={index * 100 + 50}>
+      <div class="group mb-8 relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-sm hover:shadow-md transition-all duration-300">
+        {project.image && (
+          <div class="relative h-48 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
+            <img src={project.image} alt={project.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          </div>
+        )}
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-3 dark:text-neutral-100 leading-snug">{project.title}</h3>
+          <p class="text-neutral-600 dark:text-neutral-300 mb-4 leading-relaxed">{project.description}</p>
+          <div class="flex flex-wrap gap-1.5 mb-4">
+            {project.tech.map((tech) => (
+              <span class="px-2.5 py-1 bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 rounded-full text-xs font-medium">
+                {tech}
+              </span>
+            ))}
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {project.links.github && (
+              <a href={project.links.github} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors">
+                GitHub
+              </a>
+            )}
+            {project.links.live && (
+              <a href={project.links.live} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors">
+                Live Demo
+              </a>
+            )}
+            {project.links.docs && (
+              <a href={project.links.docs} target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-[var(--primary)]/10 hover:text-[var(--primary)] transition-colors">
+                Documentation
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </ScrollReveal>
+  ))}
+</section>
