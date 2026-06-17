@@ -43,6 +43,24 @@ export interface ExperienceData {
 export const experience: ExperienceData = {
 	work: [
 		{
+			role: "AI Engineer",
+			company: "Argoman",
+			location: "Tehran, Iran",
+			startDate: "January 2026",
+			endDate: "Present",
+			description:
+				"Working on the development, optimization, and deployment of AI systems across multiple ventures within Argoman. Responsible for fine-tuning and adapting machine learning models for production use, designing scalable serving infrastructure, evaluating model performance, and extending model capabilities beyond their original limitations. Collaborate across research and engineering domains to bridge theoretical advances with production-ready AI solutions. Argoman focuses on creating and scaling AI-driven products and startups.",
+			highlights: [
+				"Fine-tuned and optimized AI models using PyTorch and internal ML frameworks.",
+				"Built and deployed scalable AI inference services with FastAPI.",
+				"Designed benchmarking systems for evaluating model quality, latency, and reliability.",
+				"Improved model serving performance and production scalability.",
+				"Extended model capabilities through architectural and algorithmic enhancements.",
+				"Bridged research and production by transforming experimental models into deployable AI systems.",
+			],
+			logo: "/assets/images/argoman.png",
+		},
+		{
 			role: "Software Engineer",
 			company: "Tabdeal",
 			location: "Tehran, Iran",
@@ -90,53 +108,8 @@ export const experience: ExperienceData = {
 	],
 	ta: [
 		{
-			course: "Design of Algorithms",
-			instructor: "Dr. Hamidreza Zarrabi-Zade",
-			term: "Fall 2022",
-		},
-		{
-			course: "Data Structures and Algorithms",
-			instructor: "Dr. Mahdi Safarnejad",
-			term: "Fall 2022",
-		},
-		{
-			course: "Statistics and Probability",
-			instructor: "Dr. Ali Sharifi-Zarchi",
-			term: "Fall 2022",
-		},
-		{
-			course: "Design of Algorithms",
-			instructor: "Dr. Mohammad-Ali Abam",
-			term: "Spring 2023",
-		},
-		{
-			course: "Database Design",
-			instructor: "Dr. Mojtaba Varmazyar",
-			term: "Spring 2023",
-		},
-		{
-			course: "Game Theory",
-			instructor: "Marzie Nilipour",
-			term: "Spring 2023",
-		},
-		{
-			course: "Data Structures and Algorithms",
-			instructor: "Dr. Mohammad-Ali Abam",
-			term: "Fall 2023",
-		},
-		{
-			course: "Design of Algorithms",
-			instructor: "Dr. Hamidreza Zarrabi-Zade",
-			term: "Fall 2023",
-		},
-		{
-			course: "Data Structures and Algorithms",
-			instructor: "Dr. Mohammad-Ali Abam",
-			term: "Spring 2024",
-		},
-		{
-			course: "Design of Algorithms",
-			instructor: "Dr. Mohammad-Ali Abam",
+			course: "Convex Optimization",
+			instructor: "Dr. Amir Najafi",
 			term: "Spring 2024",
 		},
 		{
@@ -145,9 +118,54 @@ export const experience: ExperienceData = {
 			term: "Spring 2024",
 		},
 		{
-			course: "Convex Optimization",
-			instructor: "Dr. Amir Najafi",
+			course: "Design of Algorithms",
+			instructor: "Dr. Mohammad-Ali Abam",
 			term: "Spring 2024",
+		},
+		{
+			course: "Data Structures and Algorithms",
+			instructor: "Dr. Mohammad-Ali Abam",
+			term: "Spring 2024",
+		},
+		{
+			course: "Design of Algorithms (Practical Head Teaching Assistant)",
+			instructor: "Dr. Hamidreza Zarrabi-Zade",
+			term: "Fall 2023",
+		},
+		{
+			course: "Data Structures and Algorithms",
+			instructor: "Dr. Mohammad-Ali Abam",
+			term: "Fall 2023",
+		},
+		{
+			course: "Game Theory",
+			instructor: "Marzie Nilipour",
+			term: "Spring 2023",
+		},
+		{
+			course: "Database Design",
+			instructor: "Dr. Mojtaba Varmazyar",
+			term: "Spring 2023",
+		},
+		{
+			course: "Design of Algorithms",
+			instructor: "Dr. Mohammad-Ali Abam",
+			term: "Spring 2023",
+		},
+		{
+			course: "Statistics and Probability",
+			instructor: "Dr. Ali Sharifi-Zarchi",
+			term: "Fall 2022",
+		},
+		{
+			course: "Data Structures and Algorithms",
+			instructor: "Dr. Mahdi Safarnejad",
+			term: "Fall 2022",
+		},
+		{
+			course: "Design of Algorithms",
+			instructor: "Dr. Hamidreza Zarrabi-Zade",
+			term: "Fall 2022",
 		},
 	],
 	honors: [

@@ -43,7 +43,7 @@ export const publications: Publication[] = [
 		],
 		description:
 			"Developed a probabilistic fairness framework for ranking systems, introducing efficient algorithms to quantify ranking fairness and produce unbiased rankings without sacrificing utility.",
-		image: "/assets/images/ranking.jpg",
+		image: "/assets/images/ranking.png",
 		links: {
 			googleScholar:
 				"https://scholar.google.com/citations?user=u0jxxvsAAAAJ&hl=en",
