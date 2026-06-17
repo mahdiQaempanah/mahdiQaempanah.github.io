@@ -43,7 +43,7 @@ export interface ExperienceData {
 export const experience: ExperienceData = {
 	work: [
 		{
-			role: "AI Engineer",
+			role: "ML Engineer",
 			company: "Argoman",
 			location: "Tehran, Iran",
 			startDate: "January 2026",

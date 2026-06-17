@@ -9,7 +9,7 @@ import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
 	title: "",
-	subtitle: "Computer Scientist & Software Engineer",
+	subtitle: "Computer Scientist & ML Engineer",
 	lang: "en", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
 		hue: 220, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
@@ -53,7 +53,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/me.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "Mahdi Qaempanah",
-	bio: `AI Engineer at Argoman
+	bio: `ML Engineer at Argoman
 <div class="text-sm text-neutral-500">B.Sc. Graduate in Computer Engineering at Sharif University of Technology</div>`,
 
 	links: [
