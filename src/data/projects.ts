@@ -16,7 +16,7 @@ export const projects: Project[] = [
 		description:
 			"Co-authored a 200-page online book in Persian that emphasizes algorithmic methods related to graph theory concepts. The book has assisted thousands of students in preparing for the Iranian National Olympiad in Informatics.",
 		tech: ["LaTeX", "Graph Theory"],
-		image: "/assets/images/shazzz.svg",
+		image: "/assets/images/shazzz.png",
 		links: {
 			live: "https://gtoi.shaazzz.ir/",
 		},
