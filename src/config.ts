@@ -65,7 +65,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "LinkedIn",
 			icon: "fa6-brands:linkedin",
-			url: "https://www.linkedin.com/in/mahdi-qaempanah-7a69542b0/",
+			url: "https://www.linkedin.com/in/mahdi-qaempanah/",
 		},
 		{
 			name: "Google Scholar",
